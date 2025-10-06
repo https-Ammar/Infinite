@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .video-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .video-popup iframe {
+      width: 80%;
+      height: 80%;
+      border: none;
+      border-radius: 10px;
+    }
+    .video-popup.active {
+      display: flex;
+    }
+    .close-popup {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body id="top">
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.png" class="logo-light" width="248" height="32" alt="Fitlife Logo">
+      </a>
+      <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" id="close-menu">
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+        <ul class="navbar-list">
+          <li><a href="#home" class="navbar-link active">Home</a></li>
+          <li><a href="#about" class="navbar-link">About Us</a></li>
+          <li><a href="#class" class="navbar-link">Classes</a></li>
+          <li><a href="#blog" class="navbar-link">Blog</a></li>
+          <li><a href="#contact" class="navbar-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btn btn-secondary">Join Now</a>
+      <button class="nav-open-btn" aria-label="open menu" id="open-menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section style="background-image: url('./assets/images/hero-bg.png')">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-subtitle"><strong class="strong">ALLERGY </strong> SENSITIVITY LAB</p>
+            <h1 class="h1 hero-title">Find the Root Cause For a Healthier Life</h1>
+            <p class="section-text">
+              Discover the foods that trigger your body and may cause inflammation, fatigue, weight challenges, or chronic health issues.
+              With the FAST Panel Test from Infinite Allergy Labs, you’ll finally understand your body better and take a real step toward healing.
+            </p>
+            <a href="#" class="btn btn-primary">GET TESTED</a>
+          </div>
+          <div class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="660" height="753" alt="hero banner" class="w-100">
+            <img src="./assets/images/hero-circle-one.png" width="666" height="666" aria-hidden="true" alt="" class="circle circle-1">
+            <img src="./assets/images/heart-rate.png" width="255" height="270" alt="heart rate" class="abs-img abs-img-1">
+            <img src="./assets/images/calories.png" width="348" height="224" alt="calories" class="abs-img abs-img-2">
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+          <div class="about-banner has-after">
+            <img src="./assets/images/about-banner.png" width="660" height="648" loading="lazy" alt="about banner" class="w-100">
+          </div>
+          <div class="about-content">
+            <h2 class="_about">Why Choose Infinite Allergy Labs?</h2>
+            <p class="description">Fatigue, bloating, skin flare-ups, headaches, mood changes — many of these are caused by hidden food and environmental sensitivities.</p>
+            <p class="description">At Infinite Allergy Labs, a CLIA & COLA certified laboratory, our mission is to help patients and providers uncover the root causes of chronic symptoms like migraines, digestive issues, fatigue, obesity, and inflammation.</p>
+            <p class="description">Unlike labs that spread across hormones, genetics, or microbiome testing, we specialize exclusively in food and environmental immune testing. That focus ensures every report is clinically relevant, evidence-based, and actionable for better patient care.</p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Results in 3-5 business days</li>
+              <li><i class="bi bi-check-circle"></i> Trusted by 2,500+ providers nationwide</li>
+              <li><i class="bi bi-check-circle"></i> Over 30,000 patients tested</li>
+              <li><i class="bi bi-check-circle"></i> Accepts both insurance & cash</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="panel-coverage" style="padding: 80px 0; background: #f9fafc;">
+        <div style="max-width: 1200px; margin: auto; text-align: center;">
+          <h2 class="_about">Why Choose Infinite Allergy Labs?</h2>
+          <p class="description _description" style="width: 50%; margin: 0 auto; text-align: center; font-size: 1.5rem; margin-top: 2vh;">
+            The FAST Panel goes beyond standard allergy testing by measuring reactivity to both foods and environmental triggers for a complete picture of what may be causing your symptoms.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 60px; gap: 30px;" class="pading-20">
+            <div style="background: #fff; border-radius: 16px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); padding: 40px; width: 550px; transition: all 0.3s;">
+              <div style="font-size: 50px; color: #00b894; margin-bottom: 20px;">
+     
+
+     <img src="./assets/images/ico.png" alt="" style="
+    width: 40px;
+    margin: auto;
+">
+
+              </div>
+              <h3 style="font-size: 2rem; font-weight: 600; color: #161c42;">88 Foods Tested</h3>
+              <p style="color: #666; margin-top: 10px; font-size: 1.2rem; line-height: 1.6;">
+                From dairy, eggs, meats, gluten, legumes, and nuts to everyday staples — our panel uncovers hidden food allergies and sensitivities that may be driving inflammation, digestive issues, fatigue, and skin flare-ups.
+              </p>
+            </div>
+            <div style="background: #fff; border-radius: 16px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); padding: 40px; width: 550px; transition: all 0.3s;">
+              <div style="font-size: 50px; color: #00b894; margin-bottom: 20px;">
+<img src="./assets/images/icon.png" alt="" style="
+    width: 40px;
+    margin: auto;
+">
+              </div>
+              <h3 style="font-size: 2rem; font-weight: 600; color: #161c42;">88 Environmental Factors</h3>
+              <p style="color: #666; margin-top: 10px; font-size: 1.2rem; line-height: 1.6;">
+                Dust, pollen, mold, pet dander, and other common exposures are carefully analyzed to help you identify overlooked environmental allergies that could be impacting your health.
+              </p>
+            </div>
+          </div>
+          <div style="margin-top: 60px; max-width: 850px; margin-left: auto; margin-right: auto;">
+            <p style="font-size: 1.15rem; color: #333; line-height: 1.7;" class="_description">
+              By combining food allergy testing and environmental sensitivity testing, the FAST Panel reveals what conventional tests often miss — giving you clear answers and a personalized path to relief.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section video" aria-label="video">
+        <div class="container">
+          <div class="video-card has-before has-bg-image" style="background-image: url('./assets/images/video.jpg')">
+            <button class="play-btn" id="playVideo" aria-label="play video">
+              <ion-icon name="play-sharp" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="video-popup" id="videoPopup">
+        <span class="close-popup" id="closePopup">&times;</span>
+        <iframe src="" id="videoFrame" allowfullscreen></iframe>
+      </div>
+
+      <section class="section class bg-dark has-bg-image" id="class" aria-label="class" style="background-image: url('./assets/images/classes-bg.png')">
+        <div class="container"></div>
+      </section>
+    </article>
+  </main>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top">
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    const openMenu = document.getElementById('open-menu')
+    const closeMenu = document.getElementById('close-menu')
+    const navbar = document.querySelector('.navbar')
+    openMenu.onclick = () => navbar.classList.add('active')
+    closeMenu.onclick = () => navbar.classList.remove('active')
+    document.querySelectorAll('.navbar-link').forEach(link => {
+      link.onclick = () => navbar.classList.remove('active')
+    })
+    const playBtn = document.getElementById('playVideo')
+    const popup = document.getElementById('videoPopup')
+    const closePopup = document.getElementById('closePopup')
+    const videoFrame = document.getElementById('videoFrame')
+    playBtn.onclick = () => {
+      popup.classList.add('active')
+      videoFrame.src = "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1D38bSRrPJ/&show_text=0&width=560"
+    }
+    closePopup.onclick = () => {
+      popup.classList.remove('active')
+      videoFrame.src = ""
+    }
+  </script>
+</body>
+</html>
