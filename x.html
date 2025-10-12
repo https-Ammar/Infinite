@@ -1,14 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Experiences</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Section</title>
 
 </head>
 <body>
+
+  <section id="faq">
+      <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 50px;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 20px 25px;
+      font-size: 18px;
+      font-weight: 600;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background-color: #f0f0f0;
+    }
+
+    .faq-question.active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .faq-question span {
+      transition: transform 0.3s ease;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .faq-question.active span {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #fff;
+      padding: 0 25px;
+      transition: all 0.4s ease;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .faq-answer.open {
+      max-height: 300px;
+      padding: 20px 25px;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 32px;
+      }
+      p.subtitle {
+        font-size: 16px;
+      }
+      .faq-question {
+        font-size: 16px;
+      }
+    }
+  </style>
+    <h2>Frequently Asked Questions</h2>
+    <p class="subtitle">Click on a question to view the answer</p>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Visitors
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Visitors are welcome during our opening hours from 9:00 AM to 6:00 PM. Please check in at the reception desk and follow the visitor guidelines available at the entrance.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Booking process
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        To book a service, choose your preferred date and time, fill out the booking form, and complete the payment. You will receive a confirmation email with details immediately.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Pricing and plans
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        We offer flexible monthly and yearly plans tailored to your needs. Visit our pricing page to explore all available packages or contact our sales team for custom solutions.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Customer support
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Our support team is available 24/7 via live chat and email. We’re committed to resolving your inquiries promptly, typically within a few hours.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Cancellation policy
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        You can cancel up to 48 hours before your scheduled appointment for a full refund. Late cancellations may incur a small processing fee.
+      </div>
+    </div>
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        const currentlyActive = document.querySelector('.faq-question.active');
+        if (currentlyActive && currentlyActive !== q) {
+          currentlyActive.classList.remove('active');
+          currentlyActive.nextElementSibling.classList.remove('open');
+          currentlyActive.querySelector('span').textContent = '+';
+        }
+
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        answer.classList.toggle('open');
+        q.querySelector('span').textContent = q.classList.contains('active') ? '×' : '+';
+      });
+    });
+  </script>
+  </section>
 
 
 </body>
