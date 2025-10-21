@@ -6,24 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infinite</title>
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
 
+  <link rel="stylesheet" href="./assets/css/main.css" media="print" onload="this.media='all'">
 </head>
 <body id="top">
   <header class="header" data-header>
     <div class="container">
       <a href="#" class="logo">
-        <img src="./assets/images/logo.png" class="logo-light" width="248" height="32" alt="Fitlife Logo">
+        <img src="./assets/images/logo.png" width="248" height="32" alt="Fitlife Logo" loading="eager">
       </a>
       <nav class="navbar" data-navbar>
         <button class="nav-close-btn" aria-label="close menu" id="close-menu">
-          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+          <span aria-hidden="true">×</span>
         </button>
         <ul class="navbar-list">
           <li><a href="#home" class="navbar-link active">Home</a></li>
@@ -43,33 +43,31 @@
   </header>
   
   <main>
-        <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section style="background-image: url('./assets/images/hero-bg.png')">
-        <div class="container">
-          <div class="hero-content">
-            <p class="hero-subtitle"><strong class="strong">Root Cause </strong> Allergy Testing</p> 
-            <h1 class="h1 hero-title">Find the Root Cause For a Healthier Life</h1>
-            <p class="section-text">
-              Discover the foods that trigger your body and may cause inflammation, fatigue, weight challenges, or chronic health issues.
-              With the  FAST Panel Test from Infinite Allergy labs, you'll finally understand your body better and take a real step toward healing.
-            </p>
-            <a href="#" class="btn btn-primary">GET TESTED</a>
-          </div>
-          <div class="hero-banner">
-            <img src="./assets/images/hero-banner.png" width="660" height="753" alt="hero banner" class="w-100">
-            <img src="./assets/images/hero-circle-one.png" width="666" height="666" aria-hidden="true" alt="" class="circle circle-1">
-            <img src="./assets/images/heart-rate.png" width="255" height="270" alt="heart rate" class="abs-img abs-img-1">
-            <img src="./assets/images/calories.png" width="348" height="224" alt="calories" class="abs-img abs-img-2">
-          </div>
+    <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section style="background-image: url('./assets/images/hero-bg.png')">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-subtitle"><strong class="strong">Root Cause </strong> Allergy Testing</p> 
+          <h1 class="h1 hero-title">Find the Root Cause For a Healthier Life</h1>
+          <p class="section-text">
+            Discover the foods that trigger your body and may cause inflammation, fatigue, weight challenges, or chronic health issues.
+            With the  FAST Panel Test from Infinite Allergy labs, you'll finally understand your body better and take a real step toward healing.
+          </p>
+          <a href="#" class="btn btn-primary">GET TESTED</a>
         </div>
-      </section>
-      
+        <div class="hero-banner">
+          <img src="./assets/images/hero-banner.png" width="660" height="753" alt="hero banner" class="w-100" fetchpriority="high">
+          <img src="./assets/images/hero-circle-one.png" width="666" height="666" aria-hidden="true" alt="" class="circle circle-1" loading="lazy">
+          <img src="./assets/images/heart-rate.png" width="255" height="270" alt="heart rate" class="abs-img abs-img-1" loading="lazy">
+          <img src="./assets/images/calories.png" width="348" height="224" alt="calories" class="abs-img abs-img-2" loading="lazy">
+        </div>
+      </div>
+    </section>
+    
     <article>
-  
-      
       <section class="section about" id="about" aria-label="about">
         <div class="container">
           <div class="about-banner has-after">
-            <img src="./assets/images/about-banner.png" width="660" height="648" loading="lazy" alt="about banner" class="w-100">
+            <img src="./assets/images/about-banner.png" width="660" height="648" alt="about banner" class="w-100" loading="lazy">
           </div>
           <div class="about-content">
             <h2 class="_about">Why Choose Infinite Allergy Labs?</h2>
@@ -97,7 +95,7 @@
           <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 60px; gap: 30px;" class="pading-20">
             <div style="background: #fff; border-radius: 16px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); padding: 40px; width: 550px; transition: all 0.3s;">
               <div style="font-size: 50px; color: #00b894; margin-bottom: 20px;">
-                <img src="./assets/images/ico.png" alt="" style="width: 60px; margin: auto;">
+                <img src="./assets/images/ico.png" width="60" height="57" alt="Food Testing Icon" style="margin: auto;" loading="lazy">
               </div>
               <h3 style="font-size: 1.5rem; font-weight: 600; color: #161c42;">88 Foods Tested</h3>
               <p style="color: #666; margin-top: 10px; font-size: 1.1.5rem; line-height: 1.6;">
@@ -106,7 +104,7 @@
             </div>
             <div style="background: #fff; border-radius: 16px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); padding: 40px; width: 550px; transition: all 0.3s;">
               <div style="font-size: 50px; color: #00b894; margin-bottom: 20px;">
-                <img src="./assets/images/icon.png" alt="" style="width: 60px; margin: auto;">
+                <img src="./assets/images/icon.png" width="60" height="57" alt="Environmental Testing Icon" style="margin: auto;" loading="lazy">
               </div>
               <h3 style="font-size: 1.5rem; font-weight: 600; color: #161c42;">88 Environmental Factors</h3>
               <p style="color: #666; margin-top: 10px; font-size: 1.1.5rem; line-height: 1.6;">
@@ -128,21 +126,21 @@
             <div class="swiper-slide hi">
               <div class="video-card has-before has-bg-image" style="background-image: url('./assets/images/video.jpg')">
                 <button class="play-btn" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" aria-label="play video">
-                  <ion-icon name="play-sharp" aria-hidden="true"></ion-icon>
+                  <span aria-hidden="true">▶</span>
                 </button>
               </div>
             </div>
             <div class="swiper-slide hi">
               <div class="video-card has-before has-bg-image" style="background-image: url('./assets/images/video.jpg')">
                 <button class="play-btn" data-video="https://player.vimeo.com/video/76979871" aria-label="play video">
-                  <ion-icon name="play-sharp" aria-hidden="true"></ion-icon>
+                  <span aria-hidden="true">▶</span>
                 </button>
               </div>
             </div>
             <div class="swiper-slide hi">
               <div class="video-card has-before has-bg-image" style="background-image: url('./assets/images/video.jpg')">
                 <button class="play-btn" data-video="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fyourpage%2Fvideos%2F123456789" aria-label="play video">
-                  <ion-icon name="play-sharp" aria-hidden="true"></ion-icon>
+                  <span aria-hidden="true">▶</span>
                 </button>
               </div>
             </div>
@@ -153,7 +151,7 @@
         </div>
         <div id="videoModal">
           <div class="wrap">
-            <iframe id="videoFrame" allowfullscreen></iframe>
+            <iframe id="videoFrame" allowfullscreen title="Video Player"></iframe>
             <button id="closeVideo">&times;</button>
           </div>
         </div>
@@ -161,38 +159,36 @@
       
       <div class="video-popup" id="videoPopup">
         <span class="close-popup" id="closePopup">&times;</span>
-        <iframe src="" id="videoFramePopup" allowfullscreen></iframe>
+        <iframe src="" id="videoFramePopup" allowfullscreen title="Video Player"></iframe>
       </div>
       
-      <section class="  bg-dark has-bg-image" id="class" aria-label="class" style="background-image: url('./assets/images/classes-bg.png')">
+      <section class="bg-dark has-bg-image" id="class" aria-label="class" style="background-image: url('./assets/images/classes-bg.png')">
         <div class="container"></div>
         <section class="resources-section" style="margin-top: 10vh;">
           <h2>Resources & Documents</h2>
           <p>Access useful resources and patient collection instructions to better understand our testing process.</p>
           <div class="resources-container">
-          <a href="./assets/pdf/Sample.pdf">
+            <a href="./assets/pdf/Sample.pdf">
               <div class="resource-box">
-              <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" loading="lazy" width="12" alt="" class="image-291">
-              <img class="imm_box" src="./assets/images/website_icons.png" alt="Sample Report">
-              <h3>Sample Report</h3>
-            </div>
-
-          </a>
-     <a href="https://drive.google.com/file/d/1vsUXkzbsY78QXRELrnJqbX9dqmsrIn6a/view">
-             <div class="resource-box">
-              <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" loading="lazy" width="12" alt="" class="image-291">
-              <img class="imm_box video_" src="./assets/images/website icons.png" alt="Patient Collection Instructions">
-              <h3> Collection Instructions</h3>
-            </div>
-
-     </a>
-        <a href="./assets/pdf/dbs.pdf" class="dbs_link">
+                <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" width="12" alt="" class="image-291" loading="lazy">
+                <img class="imm_box" src="./assets/images/website_icons.png" width="100" height="93" alt="Sample Report" loading="lazy">
+                <h3>Sample Report</h3>
+              </div>
+            </a>
+            <a href="https://drive.google.com/file/d/1vsUXkzbsY78QXRELrnJqbX9dqmsrIn6a/view">
               <div class="resource-box">
-              <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" loading="lazy" width="12" alt="" class="image-291">
-              <img class="imm_box " src="./assets/images/icons.png" alt="Patient Collection Instructions">
-              <h3>DBS Collection</h3>
-            </div>
-        </a>
+                <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" width="12" alt="" class="image-291" loading="lazy">
+                <img class="imm_box video_" src="./assets/images/website icons.png" width="100" height="93" alt="Patient Collection Instructions" loading="lazy">
+                <h3>Collection Instructions</h3>
+              </div>
+            </a>
+            <a href="./assets/pdf/dbs.pdf" class="dbs_link">
+              <div class="resource-box">
+                <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" width="12" alt="" class="image-291" loading="lazy">
+                <img class="imm_box" src="./assets/images/icons.png" width="100" height="104" alt="DBS Collection" loading="lazy">
+                <h3>DBS Collection</h3>
+              </div>
+            </a>
           </div>
         </section>
         
@@ -210,9 +206,9 @@
                         <div class="date">2023-08-27</div>
                       </div>
                     </div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" width="25">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" width="25" height="25" alt="Google Logo">
                   </div>
-                  <div class="stars">★★★★★ <i class="bi bi-patch-check-fill" style="color:#1a73e8"></i></div>
+                  <div class="stars">★★★★★ <i class="bi bi-patch-check-fill" style="color:#1a73e8" aria-hidden="true"></i></div>
                   <div class="text">Amazing! I really couldn't have imagined such a drastic improvement in my health and pain as a result of the test and services provided by infinite allergy labs</div>
                 </div>
               </div>
@@ -226,9 +222,9 @@
                         <div class="date">2023-08-27</div>
                       </div>
                     </div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" width="25">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" width="25" height="25" alt="Google Logo">
                   </div>
-                  <div class="stars">★★★★★ <i class="bi bi-patch-check-fill" style="color:#1a73e8"></i></div>
+                  <div class="stars">★★★★★ <i class="bi bi-patch-check-fill" style="color:#1a73e8" aria-hidden="true"></i></div>
                   <div class="text">My doctor recommended that I take this test for some symptoms I was having. After receiving the results, I followed the report strictly and I saw a reduction in...</div>
                 </div>
               </div>
@@ -236,15 +232,15 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="profile">
-                      <img src="https://i.pravatar.cc/45?img=5" class="avatar" style="background:none;border-radius:50%;">
+                      <img src="https://i.pravatar.cc/45?img=5" class="avatar" width="45" height="45" alt="Emily Reagin Avatar">
                       <div>
                         <div class="name">Emily Reagin</div>
                         <div class="date">2023-08-27</div>
                       </div>
                     </div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" width="25">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" width="25" height="25" alt="Google Logo">
                   </div>
-                  <div class="stars">★★★★★ <i class="bi bi-patch-check-fill" style="color:#1a73e8"></i></div>
+                  <div class="stars">★★★★★ <i class="bi bi-patch-check-fill" style="color:#1a73e8" aria-hidden="true"></i></div>
                   <div class="text">A really good test!!! Helped me so much.</div>
                 </div>
               </div>
@@ -252,7 +248,6 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
-       
         </section>
       </section>
 
@@ -263,117 +258,106 @@
         <div class="faq-item">
           <div class="faq-question">
             What if I have dietary restrictions or follow a special diet?
-
             <span>+</span>
           </div>
           <div class="faq-answer">
-The test helps you personalize your diet safely. Even if you follow keto, vegan, or gluten-free plans, your results will reveal which foods still trigger inflammation or immune reactions.
+            The test helps you personalize your diet safely. Even if you follow keto, vegan, or gluten-free plans, your results will reveal which foods still trigger inflammation or immune reactions.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-  Will insurance cover the test?
-
+            Will insurance cover the test?
             <span>+</span>
           </div>
           <div class="faq-answer">
-Many insurance plans with out-of-network benefits reimburse part of the cost. For those without coverage, we provide transparent cash-pay options with fast turnaround.
+            Many insurance plans with out-of-network benefits reimburse part of the cost. For those without coverage, we provide transparent cash-pay options with fast turnaround.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-How is this different from a typical food intolerance or allergy test?
-
+            How is this different from a typical food intolerance or allergy test?
             <span>+</span>
           </div>
           <div class="faq-answer">
-Most standard tests only check IgE or lactose/gluten intolerance. The F.A.S.T. test analyzes four immune pathways (IgE, IgG, IgG4, C3b/d), revealing both immediate and delayed reactions that other tests often miss.
+            Most standard tests only check IgE or lactose/gluten intolerance. The F.A.S.T. test analyzes four immune pathways (IgE, IgG, IgG4, C3b/d), revealing both immediate and delayed reactions that other tests often miss.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
- Can I collect my sample at home?
-
+            Can I collect my sample at home?
             <span>+</span>
           </div>
           <div class="faq-answer">
-Yes. We offer a dried blood spot (DBS) collection option that's easy to use and safe to mail back to our lab. Instructions are included in every kit.
+            Yes. We offer a dried blood spot (DBS) collection option that's easy to use and safe to mail back to our lab. Instructions are included in every kit.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-How do I know if my symptoms are food-related or hormonal?
+            How do I know if my symptoms are food-related or hormonal?
             <span>+</span>
           </div>
           <div class="faq-answer">
-The F.A.S.T. test helps uncover inflammation patterns linked to foods or environmental triggers. If your report shows low or no food reactions, your provider may recommend hormone or metabolic testing for a clearer picture.
+            The F.A.S.T. test helps uncover inflammation patterns linked to foods or environmental triggers. If your report shows low or no food reactions, your provider may recommend hormone or metabolic testing for a clearer picture.
           </div>
         </div>
-
-        <!--  -->
-
-      <div class="faq-item">
-          <div class="faq-question">
-How do I prepare for the test?
-            <span>+</span>
-          </div>
-          <div class="faq-answer">
-No fasting or food restrictions are required. Continue your usual diet and lifestyle as this ensures accurate detection of real immune responses.
-          </div>
-        </div>
-        <!--  -->
-        <div class="faq-item">
-          <div class="faq-question">
-What kind of support will I receive after the test?
-            <span>+</span>
-          </div>
-          <div class="faq-answer">
-After receiving your report, you'll have the option to schedule a detailed review session with one of our registered dietitians. They'll help you understand your results and design a personalized plan for better digestion, energy, and overall health.
-          </div>
-        </div>
-
 
         <div class="faq-item">
           <div class="faq-question">
-What if I have a question or need more information?
+            How do I prepare for the test?
             <span>+</span>
           </div>
           <div class="faq-answer">
-We'd love to help you understand your results or guide you through the next step of your wellness journey.
-Simply fill out the quick form below, and one of our specialists will personally reach out to answer your questions and support you in getting started.
+            No fasting or food restrictions are required. Continue your usual diet and lifestyle as this ensures accurate detection of real immune responses.
           </div>
         </div>
 
-<div class="share-section display-flex justify-center align-center" style="margin-top: 30px;">
-
-            <a href="#" class="share-btn">Talk to Our Team</a>
+        <div class="faq-item">
+          <div class="faq-question">
+            What kind of support will I receive after the test?
+            <span>+</span>
           </div>
+          <div class="faq-answer">
+            After receiving your report, you'll have the option to schedule a detailed review session with one of our registered dietitians. They'll help you understand your results and design a personalized plan for better digestion, energy, and overall health.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            What if I have a question or need more information?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            We'd love to help you understand your results or guide you through the next step of your wellness journey.
+            Simply fill out the quick form below, and one of our specialists will personally reach out to answer your questions and support you in getting started.
+          </div>
+        </div>
+
+        <div class="share-section display-flex justify-center align-center" style="margin-top: 30px;">
+          <a href="#" class="share-btn">Talk to Our Team</a>
+        </div>
       </section>
-
-      
     </article>
   </main>
 
   <a href="#top" class="back-top-btn" aria-label="back to top">
-    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+    <span aria-hidden="true">↑</span>
   </a>
 
   <footer>
     <div class="footer-content">
       <h3>Infinite Wellness Labs</h3>
       <p>We help uncover the root causes of chronic symptoms through advanced food and environmental sensitivity testing.
-Our science-driven approach empowers you to take control of your health because healing starts when you understand the cause.</p>
- <ul class="socials">
-  <li><a href="https://www.facebook.com/1833foodallergy?rdid=T6pVmAKnJIGpaDTc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GaVhGeUKM%2F#"><i class="fa fa-facebook"></i></a></li>
-  <li><a href="https://www.instagram.com/infinitewellnesslabs?igsh=MXh1eGptZTdkenhxeQ=="><i class="fa fa-instagram"></i></a></li>
-  <li><a href="https://youtube.com/@infinitewellnesslabs?si=ex4rxolrlm50SiZ6"><i class="fa fa-youtube"></i></a></li>
-  <li><a href="https://www.linkedin.com/company/infinite-wellness-labs/"><i class="fa fa-linkedin"></i></a></li>
-</ul>
-
+        Our science-driven approach empowers you to take control of your health because healing starts when you understand the cause.</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/1833foodallergy?rdid=T6pVmAKnJIGpaDTc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GaVhGeUKM%2F#" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com/infinitewellnesslabs?igsh=MXh1eGptZTdkenhxeQ==" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://youtube.com/@infinitewellnesslabs?si=ex4rxolrlm50SiZ6" aria-label="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/infinite-wellness-labs/" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      </ul>
     </div>
     <div class="footer-bottom">
       <p> &copy; 2025 Infinite Wellness Labs</p>
@@ -388,93 +372,47 @@ Our science-driven approach empowers you to take control of your health because 
     </div>
   </footer>
 
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
   <script>
+    // Load non-critical resources after page load
+    function loadExternalResources() {
+      const resources = [
+        { tag: 'script', src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js', type: 'module' },
+        { tag: 'script', src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js', noModule: true },
+        { tag: 'script', src: 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js' }
+      ];
+      
+      resources.forEach(resource => {
+        const element = document.createElement(resource.tag);
+        element.src = resource.src;
+        if (resource.type) element.type = resource.type;
+        if (resource.noModule) element.noModule = true;
+        document.body.appendChild(element);
+      });
+    }
+
+    // Initialize functionality after DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
-      if (typeof Swiper === 'undefined') return console.error('Swiper not loaded');
+      // Load non-critical resources
+      if (requestIdleCallback) {
+        requestIdleCallback(loadExternalResources);
+      } else {
+        setTimeout(loadExternalResources, 1000);
+      }
 
-      const videoSwiper = new Swiper('.video-swiper', {
-        spaceBetween: 20,
-        loop: true,
-        pagination: { el: '.swiper-pagination', clickable: true },
-        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-        slidesPerView: 1
-      });
-
-      const modal = document.getElementById('videoModal');
-      const frame = document.getElementById('videoFrame');
-      const closeBtn = document.getElementById('closeVideo');
-
-      document.querySelectorAll('.play-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const src = btn.dataset.video;
-          frame.src = src;
-          modal.classList.add('active');
-        });
-      });
-
-      closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        frame.src = '';
-      });
-
-      modal.addEventListener('click', e => {
-        if (e.target === modal) {
-          modal.classList.remove('active');
-          frame.src = '';
-        }
-      });
-
-      var customerSwiper = new Swiper(".customerSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        },
-      });
-
+      // Basic functionality that doesn't depend on external libraries
       const openMenu = document.getElementById('open-menu');
       const closeMenu = document.getElementById('close-menu');
       const navbar = document.querySelector('.navbar');
-      openMenu.onclick = () => navbar.classList.add('active');
-      closeMenu.onclick = () => navbar.classList.remove('active');
-      document.querySelectorAll('.navbar-link').forEach(link => {
-        link.onclick = () => navbar.classList.remove('active');
-      });
-
-      const playBtn = document.getElementById('playVideo'); 
-      const popup = document.getElementById('videoPopup');
-      const closePopup = document.getElementById('closePopup');
-      const videoFramePopup = document.getElementById('videoFramePopup'); 
-
-      if (playBtn) {
-        playBtn.onclick = () => {
-          popup.classList.add('active');
-          videoFramePopup.src = "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1D38bSRrPJ/&show_text=0&width=560";
-        };
+      
+      if (openMenu && closeMenu && navbar) {
+        openMenu.onclick = () => navbar.classList.add('active');
+        closeMenu.onclick = () => navbar.classList.remove('active');
+        document.querySelectorAll('.navbar-link').forEach(link => {
+          link.onclick = () => navbar.classList.remove('active');
+        });
       }
 
-      if (closePopup) {
-        closePopup.onclick = () => {
-          popup.classList.remove('active');
-          videoFramePopup.src = "";
-        };
-      }
-
+      // FAQ functionality
       const questions = document.querySelectorAll('.faq-question');
       questions.forEach(q => {
         q.addEventListener('click', () => {
@@ -491,6 +429,70 @@ Our science-driven approach empowers you to take control of your health because 
           q.querySelector('span').textContent = q.classList.contains('active') ? '×' : '+';
         });
       });
+
+      // Video modal functionality
+      const modal = document.getElementById('videoModal');
+      const frame = document.getElementById('videoFrame');
+      const closeBtn = document.getElementById('closeVideo');
+
+      if (modal && frame && closeBtn) {
+        document.querySelectorAll('.play-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const src = btn.dataset.video;
+            frame.src = src;
+            modal.classList.add('active');
+          });
+        });
+
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('active');
+          frame.src = '';
+        });
+
+        modal.addEventListener('click', e => {
+          if (e.target === modal) {
+            modal.classList.remove('active');
+            frame.src = '';
+          }
+        });
+      }
+
+      // Initialize Swiper when available
+      function initSwiper() {
+        if (typeof Swiper === 'undefined') {
+          setTimeout(initSwiper, 100);
+          return;
+        }
+
+        const videoSwiper = new Swiper('.video-swiper', {
+          spaceBetween: 20,
+          loop: true,
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          slidesPerView: 1
+        });
+
+        var customerSwiper = new Swiper(".customerSwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          },
+        });
+      }
+
+      initSwiper();
     });
   </script>
 </body>
