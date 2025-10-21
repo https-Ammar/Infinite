@@ -13,640 +13,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    
-    section {
-      padding: 80px 20px;
-    }
-    
-    h2 {
-      font-size: 32px;
-      color: #000;
-      font-weight: 700;
-      margin-bottom: 50px;
-    }
-    
-    .video-popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,.8);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    
-    .video-popup.active {
-      display: flex;
-    }
-    
-    .video-popup iframe {
-      width: 80%;
-      height: 80%;
-      border: none;
-      border-radius: 10px;
-    }
-    
-    .close-popup {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 1.5rem;
-      color: white;
-      cursor: pointer;
-    }
-    
-    .section.video {
-      padding: 40px 0;
-    }
-    
-    .video-swiper {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 360px;
-    }
-    
-    .video-card {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .play-btn {
-      background: rgba(0,0,0,.6);
-      border: none;
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      font-size: 28px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    
-    .swiper-pagination-bullet {
-      opacity: .8;
-    }
-    
-    #videoModal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    
-    #videoModal.active {
-      display: flex;
-    }
-    
-    #videoModal .wrap {
-      position: relative;
-      width: 90%;
-      max-width: 900px;
-      aspect-ratio: 16/9;
-    }
-    
-    #videoModal iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    
-    #closeVideo {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      font-size: 28px;
-      color: #fff;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .resources-section {
-      text-align: center;
-      background-color: #ffffff;
-      padding: 60px 20px;
-    }
-    
-    .resources-section h2 {
-      font-size: 32px;
-      color: #1b1b1b;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-    
-    .resources-section p {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 60px;
-    }
-    
-    .resources-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-    }
-    
-    .resource-box {
-      width: 100%;
-      max-width: 450px;
-      height: 250px;
-      background-color: #f9fafc;
-      border: 2px solid #e1e7ef;
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.3s ease;
-      grid-row-gap: 8px;
-      text-align: center;
-      padding: 16px;
-      text-decoration: none;
-      position: relative;
-    }
-    
-    .resource-box img {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-    
-    .resource-box h3 {
-      color: #0070d2;
-      font-size: 22px;
-      font-weight: 700;
-    }
-    
-    img.image-291 {
-      opacity: .5;
-      width: 10px;
-      position: absolute;
-      inset: 6px 6px auto auto;
-      z-index: 9999999999;
-    }
-    
-    .customerSwiper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 50px;
-    }
-    
-    .swiper-slide {
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-    }
-    
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      min-width: 300px;
-      width: 100%;
-      text-align: left;
-      padding: 25px;
-      box-sizing: border-box;
-    }
-    
-    .card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 15px;
-    }
-    
-    .profile {
-      display: flex;
-      align-items: center;
-    }
-    
-    .avatar {
-      background-color: #f44336;
-      color: #fff;
-      font-weight: bold;
-      font-size: 20px;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 10px;
-      flex-shrink: 0;
-    }
-    
-    .name {
-      font-weight: 700;
-      color: #000;
-    }
-    
-    .date {
-      font-size: 14px;
-      color: #777;
-    }
-    
-    .stars {
-      color: #ffc107;
-      margin: 10px 0;
-    }
-    
-    .text {
-      color: #333;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #000;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: background-color 0.3s;
-    }
-    
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-      background-color: #f0f0f0;
-    }
-    
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-      font-size: 16px;
-      font-weight: bold;
-    }
-    
-    .share-section {
-      margin-top: 60px;
-    }
-    
-    .share-section h3 {
-      font-size: 28px;
-      color: #000;
-      font-weight: 600;
-      margin-bottom: 30px;
-    }
-    
-    .share-btn {
-      display: inline-block;
-      padding: 15px 25px;
-      border: 1px solid #000;
-      color: #000;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 500;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    
-    .share-btn:hover {
-      background-color: #000;
-      color: #fff;
-    }
-    
-    .swiper-slide.swiper-slide-active {
-      height: 360px !important;
-      padding: 10px;
-    }
-    
-    section#faq {
-      width: 80%;
-      margin: auto;
-    }
-    
-    p.subtitle {
-      text-align: center;
-      color: #666;
-      font-size: 18px;
-      margin-bottom: 50px;
-    }
-    
-    .faq-item {
-      background-color: #fff;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
-    
-    .faq-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-    
-    .faq-question {
-      cursor: pointer;
-      padding: 20px 25px;
-      font-size: 18px;
-      font-weight: 600;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-    }
-    
-    .faq-question:hover {
-      background-color: #f0f0f0;
-    }
-    
-    .faq-question.active {
-      background-color: #000;
-      color: #fff;
-    }
-    
-    .faq-question span {
-      transition: transform 0.3s ease;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    
-    .faq-question.active span {
-      transform: rotate(45deg);
-    }
-    
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      background-color: #fff;
-      padding: 0 25px;
-      transition: all 0.4s ease;
-      color: #444;
-      line-height: 1.7;
-    }
-    
-    .faq-answer.open {
-      max-height: 300px;
-      padding: 20px 25px;
-      border-top: 1px solid #eee;
-    }
-    
-    footer {
-      background: #111;
-      height: auto;
-      width: 100vw;
-      padding: 20px;
-      padding-top: 40px;
-      color: #fff;
-      overflow: hidden;
-    }
-    
-    .footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .footer-content h3 {
-      font-size: 2.1rem;
-      font-weight: 500;
-      text-transform: capitalize;
-      line-height: 3rem;
-    }
-    
-    .footer-content p {
-      max-width: 500px;
-      margin: 10px auto;
-      line-height: 28px;
-      font-size: 14px;
-      color: #cacdd2;
-    }
-    
-    .socials {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 1rem 0 3rem 0;
-    }
-    
-    .socials li {
-      margin: 0 10px;
-    }
-    
-    .socials a {
-      text-decoration: none;
-      color: #fff;
-      border: 1.1px solid white;
-      padding: 5px;
-      border-radius: 50%;
-    }
-    
-    .socials a i {
-      font-size: 1.1rem;
-      width: 28px;
-      transition: color .4s ease;
-      color: white;
-      padding: 0;
-      margin: 0;
-      font-size: medium;
-    }
-    
-    .socials a:hover i {
-      color: aqua;
-    }
-    
-    .footer-bottom {
-      background: #111111;
-      padding: 20px;
-      padding-bottom: 40px;
-      text-align: center;
-    }
-    
-    .footer-bottom p {
-      float: left;
-      font-size: 14px;
-      word-spacing: 2px;
-      text-transform: capitalize;
-    }
-    
-    .footer-bottom p a {
-      color: #44bae8;
-      font-size: 16px;
-      text-decoration: none;
-    }
-    
-    .footer-bottom span {
-      text-transform: uppercase;
-      opacity: .4;
-      font-weight: 200;
-    }
-    
-    .footer-menu {
-      float: right;
-    }
-    
-    .footer-menu ul {
-      display: flex;
-    }
-    
-    .footer-menu ul li {
-      padding-right: 10px;
-      display: block;
-    }
-    
-    .footer-menu ul li a {
-      color: #cfd2d6;
-      text-decoration: none;
-    }
-    
-    .footer-menu ul li a:hover {
-      color: #27bcda;
-    }
-    
-    @media (max-width: 768px) {
-      .resources-section h2 {
-        font-size: 26px;
-      }
-      
-      .resources-section p {
-        font-size: 16px;
-        margin-bottom: 40px;
-      }
-      
-      .resource-box {
-        height: 220px;
-      }
-      
-      .resource-box img {
-        width: 80px;
-      }
-      
-      .customerSwiper {
-        padding: 0 10px;
-      }
-      
-      .swiper-button-next,
-      .swiper-button-prev {
-        display: none;
-      }
-      
-      h2 {
-        font-size: 32px;
-      }
-      
-      p.subtitle {
-        font-size: 16px;
-      }
-      
-      .faq-question {
-        font-size: 16px;
-      }
-      
-      section#faq {
-        width: 100%;
-        margin: auto;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .resources-section h2 {
-        font-size: 22px;
-      }
-      
-      .resources-section p {
-        font-size: 15px;
-      }
-      
-      .resource-box {
-        height: 200px;
-      }
-      
-      .resource-box img {
-        width: 30px;
-      }
-    }
-    
-    @media screen and (max-width: 600px) {
-      section.resources-section {
-        margin: 30px 0;
-      }
-      
-      .resources-container {
-        flex-wrap: inherit;
-        gap: 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-      }
-      
-      .resources-container > div:nth-child(3) {
-        grid-column: 1 / 3;
-        justify-self: center;
-      }
-      
-      .resource-box h3 {
-        font-size: small;
-      }
-      
-      .resource-box img {
-        margin: 0;
-      }
-      
-      img.imm_box {
-        width: 100px;
-      }
-      
-      .video_ {
-        width: 90px !important;
-      }
-      
-      section#home {
-        padding: 25px;
-      }
-      
-      .share-btn {
-        font-size: small;
-      }
-      
-      .footer-menu ul {
-        display: flex;
-        margin-top: 10px;
-        margin-bottom: 20px;
-      }
-    }
-  </style>
+
 </head>
 <body id="top">
   <header class="header" data-header>
@@ -676,8 +43,7 @@
   </header>
   
   <main>
-    <article>
-      <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section style="background-image: url('./assets/images/hero-bg.png')">
+        <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section style="background-image: url('./assets/images/hero-bg.png')">
         <div class="container">
           <div class="hero-content">
             <p class="hero-subtitle"><strong class="strong">Root Cause </strong> Allergy Testing</p> 
@@ -697,6 +63,9 @@
         </div>
       </section>
       
+    <article>
+  
+      
       <section class="section about" id="about" aria-label="about">
         <div class="container">
           <div class="about-banner has-after">
@@ -705,12 +74,14 @@
           <div class="about-content">
             <h2 class="_about">Why Choose Infinite Allergy Labs?</h2>
             <p class="description">Fatigue, bloating, skin flare-ups, headaches, mood Because of these are caused by hidden food and environmental sensitivities.</p>
-            <p class="description">At Infinite Allergy Labs, a CLIA & COLA certified laboratory, our mission is to help patients and providers uncover the root causes of chronic symptoms like migraines, digestive issues, fatigue, obesity, and inflammation.</p>
+            <p class="description"><strong>
+              At Infinite Allergy Labs, a CLIA & COLA certified laboratory,
+            </strong> our mission is to help patients and providers uncover the root causes of chronic symptoms like migraines, digestive issues, fatigue, obesity, and inflammation.</p>
             <p class="description">Unlike labs that spread across hormones, genetics, or microbiome testing, we specialize exclusively in food and environmental immune testing. That focus ensures every report is clinically relevant, evidence-based, and actionable for better patient care.</p>
             <ul>
               <li><i class="bi bi-check-circle"></i> Results in 3-5 business days</li>
               <li><i class="bi bi-check-circle"></i> Trusted by 2,500+ providers nationwide</li>
-              <li><i class="bi bi-check-circle"></i> Over 30,000 patients tested</li>
+              <li><i class="bi bi-check-circle"></i> Over 32,000 patients tested</li>
               <li><i class="bi bi-check-circle"></i> Accepts both insurance & cash</li>
             </ul>
           </div>
@@ -720,7 +91,7 @@
       <section id="panel-coverage" style="padding: 80px 0; background: #f9fafc;">
         <div style="max-width: 1200px; margin: auto; text-align: center;">
           <h2 class="_about">Comprehensive Panel Coverages</h2>
-          <p class="description _description" style="width: 50%; margin: 0 auto; text-align: center; font-size: 1.5rem; margin-top: 2vh;">
+          <p class="description _description" style="width: 50%; margin: 0 auto; text-align: center; margin-top: 2vh;">
             The FAST Panel goes beyond standard allergy testing by measuring reactivity to both foods and environmental triggers for a complete picture of what may be causing your symptoms.
           </p>
           <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 60px; gap: 30px;" class="pading-20">
@@ -744,7 +115,7 @@
             </div>
           </div>
           <div style="margin-top: 60px; max-width: 850px; margin-left: auto; margin-right: auto;">
-            <p style="font-size: 1.15rem; color: #333; line-height: 1.7;" class="_description">
+            <p style=" color: #333; line-height: 1.7;" class="_description">
               By combining food allergy testing and environmental sensitivity testing, the FAST Panel reveals what conventional tests often miss by giving you clear answers and a personalized path to relief.
             </p>
           </div>
@@ -793,27 +164,35 @@
         <iframe src="" id="videoFramePopup" allowfullscreen></iframe>
       </div>
       
-      <section class=" class bg-dark has-bg-image" id="class" aria-label="class" style="background-image: url('./assets/images/classes-bg.png')">
+      <section class="  bg-dark has-bg-image" id="class" aria-label="class" style="background-image: url('./assets/images/classes-bg.png')">
         <div class="container"></div>
         <section class="resources-section">
           <h2>Resources & Documents</h2>
           <p>Access useful resources and patient collection instructions to better understand our testing process.</p>
           <div class="resources-container">
-            <div class="resource-box">
+          <a href="./assets/pdf/Sample.pdf">
+              <div class="resource-box">
               <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" loading="lazy" width="12" alt="" class="image-291">
               <img class="imm_box" src="./assets/images/website_icons.png" alt="Sample Report">
               <h3>Sample Report</h3>
             </div>
-            <div class="resource-box">
+
+          </a>
+     <a href="https://drive.google.com/file/d/1vsUXkzbsY78QXRELrnJqbX9dqmsrIn6a/view">
+             <div class="resource-box">
               <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" loading="lazy" width="12" alt="" class="image-291">
               <img class="imm_box video_" src="./assets/images/website icons.png" alt="Patient Collection Instructions">
               <h3> Collection Instructions</h3>
             </div>
-            <div class="resource-box">
+
+     </a>
+        <a href="./assets/pdf/dbs.pdf" class="dbs_link">
+              <div class="resource-box">
               <img src="https://cdn.prod.website-files.com/5dd07f6bc5a7ed039456e602/62d1b3ae29b938df573738fb_Vector%201.svg" loading="lazy" width="12" alt="" class="image-291">
               <img class="imm_box " src="./assets/images/icons.png" alt="Patient Collection Instructions">
               <h3>DBS Collection</h3>
             </div>
+        </a>
           </div>
         </section>
         
@@ -873,67 +252,109 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
-          <div class="share-section">
-            <h3>Share your story with us</h3>
-            <a href="#" class="share-btn">CLICK HERE : YOUR OPINION MATTERS</a>
-          </div>
+       
         </section>
       </section>
 
       <section id="faq">
-        <h2>Frequently Asked Questions</h2>
+        <h2 class="titel_">Frequently Asked Questions</h2>
         <p class="subtitle">Click on a question to view the answer</p>
 
         <div class="faq-item">
           <div class="faq-question">
-            Visitors
+            What if I have dietary restrictions or follow a special diet?
+
             <span>+</span>
           </div>
           <div class="faq-answer">
-            Visitors are welcome during our opening hours from 9:00 AM to 6:00 PM. Please check in at the reception desk and follow the visitor guidelines available at the entrance.
+The test helps you personalize your diet safely. Even if you follow keto, vegan, or gluten-free plans, your results will reveal which foods still trigger inflammation or immune reactions.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            Booking process
+  Will insurance cover the test?
+
             <span>+</span>
           </div>
           <div class="faq-answer">
-            To book a service, choose your preferred date and time, fill out the booking form, and complete the payment. You will receive a confirmation email with details immediately.
+Many insurance plans with out-of-network benefits reimburse part of the cost. For those without coverage, we provide transparent cash-pay options with fast turnaround.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            Pricing and plans
+How is this different from a typical food intolerance or allergy test?
+
             <span>+</span>
           </div>
           <div class="faq-answer">
-            We offer flexible monthly and yearly plans tailored to your needs. Visit our pricing page to explore all available packages or contact our sales team for custom solutions.
+Most standard tests only check IgE or lactose/gluten intolerance. The F.A.S.T. test analyzes four immune pathways (IgE, IgG, IgG4, C3b/d), revealing both immediate and delayed reactions that other tests often miss.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            Customer support
+ Can I collect my sample at home?
+
             <span>+</span>
           </div>
           <div class="faq-answer">
-            Our support team is available 24/7 via live chat and email. We're committed to resolving your inquiries promptly, typically within a few hours.
+Yes. We offer a dried blood spot (DBS) collection option that's easy to use and safe to mail back to our lab. Instructions are included in every kit.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            Cancellation policy
+How do I know if my symptoms are food-related or hormonal?
             <span>+</span>
           </div>
           <div class="faq-answer">
-            You can cancel up to 48 hours before your scheduled appointment for a full refund. Late cancellations may incur a small processing fee.
+The F.A.S.T. test helps uncover inflammation patterns linked to foods or environmental triggers. If your report shows low or no food reactions, your provider may recommend hormone or metabolic testing for a clearer picture.
           </div>
         </div>
+
+        <!--  -->
+
+      <div class="faq-item">
+          <div class="faq-question">
+How do I prepare for the test?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+No fasting or food restrictions are required. Continue your usual diet and lifestyle as this ensures accurate detection of real immune responses.
+          </div>
+        </div>
+        <!--  -->
+        <div class="faq-item">
+          <div class="faq-question">
+What kind of support will I receive after the test?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+After receiving your report, you'll have the option to schedule a detailed review session with one of our registered dietitians. They'll help you understand your results and design a personalized plan for better digestion, energy, and overall health.
+          </div>
+        </div>
+
+
+        <div class="faq-item">
+          <div class="faq-question">
+What if I have a question or need more information?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+We'd love to help you understand your results or guide you through the next step of your wellness journey.
+Simply fill out the quick form below, and one of our specialists will personally reach out to answer your questions and support you in getting started.
+          </div>
+        </div>
+
+<div class="share-section display-flex justify-center align-center" style="margin-top: 30px;">
+
+            <a href="#" class="share-btn">Talk to Our Team</a>
+          </div>
       </section>
+
+      
     </article>
   </main>
 
@@ -943,18 +364,19 @@
 
   <footer>
     <div class="footer-content">
-      <h3>Foolish Developer</h3>
-      <p>Raj Template is a blog website where you will find great tutorials on web design and development. Here each tutorial is beautifully described step by step with the required source code.</p>
-      <ul class="socials">
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-      </ul>
+      <h3>Infinite Wellness Labs</h3>
+      <p>We help uncover the root causes of chronic symptoms through advanced food and environmental sensitivity testing.
+Our science-driven approach empowers you to take control of your health because healing starts when you understand the cause.</p>
+ <ul class="socials">
+  <li><a href="https://www.facebook.com/1833foodallergy?rdid=T6pVmAKnJIGpaDTc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GaVhGeUKM%2F#"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://www.instagram.com/infinitewellnesslabs?igsh=MXh1eGptZTdkenhxeQ=="><i class="fa fa-instagram"></i></a></li>
+  <li><a href="https://youtube.com/@infinitewellnesslabs?si=ex4rxolrlm50SiZ6"><i class="fa fa-youtube"></i></a></li>
+  <li><a href="https://www.linkedin.com/company/infinite-wellness-labs/"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+
     </div>
     <div class="footer-bottom">
-      <p>copyright &copy; <a href="#">Foolish Developer</a></p>
+      <p> &copy; 2025 Infinite Wellness Labs</p>
       <div class="footer-menu">
         <ul class="f-menu">
           <li><a href="">Home</a></li>
