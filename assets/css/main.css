@@ -1207,3 +1207,8 @@ section#home {
 }.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     display: none;
 }
+
+::-webkit-scrollbar{
+  width: 0
+;
+}
