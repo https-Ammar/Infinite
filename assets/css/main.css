@@ -378,7 +378,7 @@ a.btn.btn-secondary { background: #161c42; color: white; }
 .video-card {
   background-color: var(--light-gray);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   height: 500px;
   border-radius: var(--radius-10);
   display: flex;
@@ -702,7 +702,7 @@ h2 { font-size: 32px; color: #000; font-weight: 700; margin-bottom: 50px; }
   height: 100%;
   border-radius: 12px;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -865,7 +865,7 @@ img.image-291 {
 }
 
 .share-btn:hover { background-color: #000; color: #fff; }
-.swiper-slide.swiper-slide-active { height: 360px !important; padding: 10px; }
+.swiper-slide.swiper-slide-active { height: 50vh !important; padding: 10px; }
 
 section#faq { width: 80%; margin: auto; }
 p.subtitle { text-align: center; color: #666; font-size: 18px; margin-bottom: 50px; }
