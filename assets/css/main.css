@@ -764,6 +764,7 @@ h2 { font-size: 32px; color: #000; font-weight: 700; margin-bottom: 50px; }
   justify-content: center;
   align-items: center;
   gap: 40px;
+  margin-top: 15vh;
 }
 
 .resource-box {
