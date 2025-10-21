@@ -1188,6 +1188,14 @@ h2.titel_ {
 }
 .container.p-0 {padding: 0;}
 
+section#home {
+    padding: 0;
+}
+
+.hero-content {
+    padding: 15px;
+}
+
 }a.back-top-btn.active {
     width: 55px;
     height: 55px;
