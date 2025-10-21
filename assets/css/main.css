@@ -1181,5 +1181,16 @@ h2.titel_ {
 h2.titel_ {
     font-size: large;
 }
-  
+  section#class {
+    margin-top: 40vh;
+}
+a.back-top-btn.active {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: revert;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
 }
